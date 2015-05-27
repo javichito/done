@@ -1,0 +1,35 @@
+/**
+* Header
+*/
+header.main {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.navbar-brand {
+	padding-left: 0;
+	padding-right: 0;
+}
+.nav-pills.navbar-right {
+	margin-right: 0;
+}
+
+/**
+* ToDo's
+*/
+.list-group-item input[type=text] {
+	width: 100%;
+	border: none;
+	padding: 10px 45px 10px 10px;
+}
+.list-group-item button {
+	top: 10px;
+	right: 10px;
+	position: absolute;
+}
+
+/**
+* Util
+*/
+.no-padding {
+	padding: 0 !important;
+}

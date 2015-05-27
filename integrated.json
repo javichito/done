@@ -1,0 +1,7 @@
+{
+    "pdo": {
+        "connection": "sqlite:storage/database.sqlite",
+        "username": "",
+        "password": ""
+    }
+}
