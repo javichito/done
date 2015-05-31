@@ -22,6 +22,7 @@ header.main {
 }
 .list-group-item label,
 .list-group-item input[type=text] {
+	margin: 0;
 	width: 100%;
 	border: none;
 	padding: 10px 45px 10px 45px;
@@ -33,13 +34,18 @@ header.main {
 	top: 10px;
 	position: absolute;
 }
+.list-group-item button.undo,
 .list-group-item button.check {
 	left: 10px;
 }
+.list-group-item button.undo,
 .list-group-item button.remove {
-	right: 10px;
 	display: none;
 }
+.list-group-item button.remove {
+	right: 10px;
+}
+.list-group-item:hover button.undo,
 .list-group-item:hover button.remove {
 	display: block;
 }

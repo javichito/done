@@ -10,8 +10,8 @@
 			<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 			<input type="hidden" name="checked" value="0">
 			
-			<button type="submit" class="btn btn-default btn-xs remove" title="Delete">
-				<i class="glyphicon glyphicon-repeat"></i>
+			<button type="submit" class="btn btn-default btn-xs undo" title="Undo">
+				<i class="glyphicon glyphicon-pencil"></i>
 			</button>
 		</form>
 	</li>
