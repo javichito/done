@@ -4,46 +4,25 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading clearfix">
-					<span>Your Lists</span>
-					
-					<a href="/lists/new" class="btn btn-primary btn-sm" style="float: right">
-						+ CREATE TODO LIST
-					</a>
+
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					@include('todo_lists.partials.nav', ['lists' => $lists])
 				</div>
 
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<a href="/lists/11">
-										Sample List
-									</a>
-									<a href="" class="btn btn-primary btn-active btn-sm" style="float: right;">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									</a>
-								</div>
-							</div>
+				<div class="col-sm-12 col-md-9">
+					<div class="panel panel-default">
+						<div class="panel-heading">Recent todo's</div>
+
+						<div class="panel-body">
+							<ul class="list-group">
+								@foreach ($items as $item)
+									<li class="list-group-item">
+										<strong>{{ $item->title }}</strong> was added to <a href="/lists/{{ $item->todoList->id }}">{{ $item->todoList->title }}</a> {{ $item->created_at->diffForHumans() }}.
+									</li>
+								@endforeach
+							</ul>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
-						@foreach ($lists as $list)
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body">
-										<a href="/lists/{{ $list->id }}">
-											{{ $list->title }}
-										</a>
-										<a href="" class="btn btn-default btn-sm" style="float: right;">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						@endforeach
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Item;
 use App\TodoList;
 use Illuminate\Auth\Guard;
 
@@ -37,9 +38,16 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		$user = $this->auth->user();
 		$lists = TodoList::whereUserId($this->auth->user()->id)->get();
+		$items = Item::with(['todoList' => function($query) use($user)
+		{
 
-		return view('home', compact('lists'));
+			$query->whereUserId($user->id);
+
+		}])->orderBy('created_at', 'DESC')->limit(8)->get();
+
+		return view('home', compact('lists', 'items'));
 	}
 
 }

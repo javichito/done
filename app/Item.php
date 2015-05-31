@@ -6,9 +6,9 @@ class Item extends Model {
 
 	protected $fillable = ['list_id', 'title', 'checked'];
 
-	public function todo_list()
+	public function todoList()
 	{
-		return $this->belongsTo('App\TodoList');
+		return $this->belongsTo('App\TodoList', 'list_id');
 	}
 
 }
