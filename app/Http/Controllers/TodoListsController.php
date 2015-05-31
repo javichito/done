@@ -20,7 +20,11 @@ class TodoListsController extends Controller {
 
 	public function show($id)
 	{
-		$list = TodoList::findOrFail($id);
+		$list = TodoList::with(['items' => function($query)
+		{ 
+			$query->orderBy('checked');
+		}])->findOrFail($id);
+
 		$lists = TodoList::whereUserId($this->auth->user()->id)->get();
 
 		return view('todo_lists.show', compact('lists', 'list'));
