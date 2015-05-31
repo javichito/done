@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration {
 			$table->foreign('list_id')->references('id')->on('lists');
 
 			$table->string('title', 140);
+			$table->boolean('checked')->default(false);
 			$table->timestamps();
 		});
 	}

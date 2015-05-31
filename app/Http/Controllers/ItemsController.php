@@ -35,9 +35,12 @@ class ItemsController extends Controller {
 	{
 		$item = Item::findOrFail($id);
 
-		$this->validate($request, ['title' => 'required|max:140']);
+		$this->validate($request, [
+			'title' => 'max:140',
+			'checked' => 'boolean'
+		]);
 
-		$item->update($request->only('title'));
+		$item->update($request->all());
 
 		return redirect()->back();
 	}

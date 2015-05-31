@@ -56,7 +56,7 @@
 		<div class="container">
 			<div class="text-center">
 				<p>
-					Build by <a href="https://github.com/javichito" target="_blank">Javier Hidalgo</a>. Done is part of <a href="#">LaravelApps</a>.
+					Built by <a href="https://github.com/javichito" target="_blank">Javier Hidalgo</a>. Done is part of <a href="#">LaravelApps</a>.
 				</p>
 			</div>
 		</div>

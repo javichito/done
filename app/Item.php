@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model {
 
-	protected $fillable = ['list_id', 'title'];
+	protected $fillable = ['list_id', 'title', 'checked'];
 
 	public function todo_list()
 	{

@@ -16,15 +16,32 @@ header.main {
 /**
 * ToDo's
 */
+.list-group-header strong {
+	margin-top: 4px;
+	display: inline-block;
+}
+.list-group-item label,
 .list-group-item input[type=text] {
 	width: 100%;
 	border: none;
-	padding: 10px 45px 10px 10px;
+	padding: 10px 45px 10px 45px;
+}
+.list-group-item label {
+	text-decoration: line-through;
 }
 .list-group-item button {
 	top: 10px;
-	right: 10px;
 	position: absolute;
+}
+.list-group-item button.check {
+	left: 10px;
+}
+.list-group-item button.remove {
+	right: 10px;
+	display: none;
+}
+.list-group-item:hover button.remove {
+	display: block;
 }
 
 /**
